@@ -842,7 +842,7 @@ Saya berfokus pada perancangan pengalaman pengguna, membuat antarmuka yang menar
           <p style="color: #cbd5e1; line-height: 1.8;">
             Saya seorang UI/UX Designer yang berfokus pada pembuatan antarmuka yang menarik, responsif, dan mudah digunakan. Saya senang memadukan kreativitas dan logika untuk menghasilkan karya digital yang estetis dan bermanfaat.
           </p>
-          <a href="#contact-section" class="btn btn-primary mt-2" style="border-radius: 30px; padding: 8px 20px;">Hubungi Saya</a>
+          <a href="https://wa.me/6285922426982"class="btn btn-primary mt-2" style="border-radius:30px;padding:8px 20px;">Hubungi Saya</a>
         </div>
       </div>
 

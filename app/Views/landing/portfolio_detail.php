@@ -58,7 +58,7 @@
           <li class="nav-item"><a href="<?= base_url() ?>#skills-section" class="nav-link"><span>Skills</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#services-section" class="nav-link"><span>Services</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#projects-section" class="nav-link"><span>Projects</span></a></li>
-          <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Testimonial</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#testimonial-section" class="nav-link"><span>Testimonial</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#blog-section" class="nav-link"><span>Blog</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#contact-section" class="nav-link"><span>Contact</span></a></li>
         </ul>
@@ -67,8 +67,21 @@
     </div>
   </nav>
 
+  <?php
+$ref = $_SERVER['HTTP_REFERER'] ?? '';
+$backUrl = base_url('#projects-section'); // default
+
+if (strpos($ref, 'portfolio') !== false) {
+    $backUrl = base_url('portfolio');
+}
+?>
+
   <!-- ================= PORTFOLIO DETAIL ================= -->
   <section class="portfolio-detail-section">
+<a href="<?= $backUrl ?>" class="btn-back" data-aos="fade-right" title="Kembali">
+    <i class="bi bi-arrow-left"></i>
+</a>
+
     <div class="container">
       <!-- Header -->
       <div class="project-header" data-aos="fade-down">
@@ -138,7 +151,7 @@
     </div>
   </section>
 
-<!-- ================= FOOTER ================= -->
+  <!-- ================= FOOTER ================= -->
   <footer class="ftco-footer ftco-section" style="background:#151b29ff;color:#fff;padding:60px 0;">
     <div class="container">
 
@@ -148,15 +161,15 @@
         <div class="col-md-6 mb-4 mb-md-0">
           <h2 class="ftco-heading-2 mb-3" style="font-weight:600;color:#cbd5e1;">Ayo Bahas Proyek Anda</h2>
           <p style="color:#cbd5e1;line-height:1.8;">
-            Saya seorang UI/UX Designer yang berfokus pada pembuatan antarmuka yang menarik, responsif, dan mudah digunakan. Saya senang memadukan kreativitas dan logika untuk menghasilkan karya digital yang estetis dan bermanfaat.
+          Saya seorang UI/UX Designer yang berfokus pada pembuatan antarmuka yang menarik, responsif, dan mudah digunakan. Saya senang memadukan kreativitas dan logika untuk menghasilkan karya digital yang estetis dan bermanfaat.
           </p>
-          </p>
-          <a href="<?= base_url() ?>#contact-section" class="btn btn-primary mt-2" style="border-radius:30px;padding:8px 20px;">Hubungi Saya</a>
-
+          <a href="https://wa.me/6285922426982"class="btn btn-primary mt-2" style="border-radius:30px;padding:8px 20px;">Hubungi Saya</a>
+        </div>
 
         <!-- Contact -->
         <div class="col-md-5">
           <h2 class="ftco-heading-2 mb-3" style="font-weight:600;color:#cbd5e1;">Punya Pertanyaan?</h2>
+          <ul class="list-unstyled" style="color:#cbd5e1;line-height:2;">
           <ul class="list-unstyled" style="color:#cbd5e1;line-height:2;">
             <li><i class="fa fa-phone me-2"></i> +62 859 2242 6982</li>
             <li><i class="fa fa-envelope me-2"></i> marsyaamira562@gmail.com</li>
@@ -164,21 +177,9 @@
           </ul>
 
           <ul class="ftco-footer-social list-unstyled d-flex gap-3 mt-3">
-            <li>
-              <a href="https://instagram.com/syaa148_" target="_blank" class="social-circle" style="color: #fff; font-size: 1.3rem;">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.tiktok.com/@ssym48" target="_blank" class="social-circle" style="color: #fff; font-size: 1.3rem;">
-                <i class="fa-brands fa-tiktok"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://wa.me/6281337585501" target="_blank" class="social-circle" style="color: #fff; font-size: 1.3rem;">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-            </li>
+            <li><a href="https://instagram.com/syaa148_" target="_blank" style="font-size:1.3rem;color:#fff;"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.tiktok.com/@ssym48" target="_blank" style="font-size:1.3rem;color:#fff;"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a href="https://wa.me/6281337585501" target="_blank" style="font-size:1.3rem;color:#fff;"><i class="fa-brands fa-whatsapp"></i></a></li>
           </ul>
         </div>
 
@@ -193,19 +194,11 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Bubble -->
+    <!-- WhatsApp Bubble -->
   <a href="https://wa.me/6285922426982" target="_blank" class="wa-bubble">
     <i class="fab fa-whatsapp"></i>
     <span>Kontak Kami</span>
   </a>
-
-  <!-- Loader -->
-  <div id="ftco-loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#F96D00" />
-    </svg>
-  </div>
 
   <!-- Scripts -->
   <script src="<?= base_url('clyde/assets/js/jquery.min.js') ?>"></script>
@@ -222,8 +215,7 @@
   <script src="<?= base_url('clyde/assets/js/google-map.js') ?>"></script>
   <script src="<?= base_url('clyde/assets/js/main.js') ?>"></script>
 
-  <!-- Bootstrap & AOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({

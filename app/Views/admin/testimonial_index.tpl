@@ -123,15 +123,13 @@
                 </tbody>
             </table>
 
-            {if $pager}
-<div class="pagination-wrapper mt-3">
-    {$pager->links()}
-</div>
-{/if}
-
+           {if $pager}
+            <div class="pagination-wrapper mt-3">
+                {$pager->links()}
+            </div>
+            {/if}
         </div>
     </div>
-
 </div>
 
 {literal}

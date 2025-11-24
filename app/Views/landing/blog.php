@@ -1,221 +1,203 @@
 <?php
 // app/Views/landing/blog.php
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Bootstrap & AOS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9fafb;
-}
+<!-- Plugin CSS -->
+<link rel="stylesheet" href="<?= base_url('clyde/assets/css/animate.css') ?>">
+<link rel="stylesheet" href="<?= base_url('clyde/assets/css/owl.carousel.min.css') ?>">
+<link rel="stylesheet" href="<?= base_url('clyde/assets/css/owl.theme.default.min.css') ?>">
+<link rel="stylesheet" href="<?= base_url('clyde/assets/css/magnific-popup.css') ?>">
+<link rel="stylesheet" href="<?= base_url('clyde/assets/css/flaticon.css') ?>">
 
-#blog-section {
-  padding: 100px 0;
-  position: relative;
-}
+<!-- Style utama (HARUS PALING TERAKHIR) -->
+<link rel="stylesheet" href="<?= base_url('clyde/assets/css/style.css') ?>">
 
-/* Judul utama */
-.section-title {
-  text-align: center;
-  font-weight: 800;
-  font-size: 42px;
-  margin-bottom: 60px;
-  color: #111827;
-  position: relative;
-}
-.section-title::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: #2563eb;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -15px;
-  border-radius: 2px;
-}
+  <title>Blog – Marsya Amira</title>
+</head>
 
-/* Tombol kembali kiri atas */
-/* Tombol kembali */
-.btn-back {
-  position: absolute;
-  top: 30px;
-  left: 40px;
-  background: #fff;
-  color: #333;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  z-index: 10;
-}
-.btn-back:hover {
-  background: #B2B592;
-  transform: translateY(-3px);
-}
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-/* Blog Card */
-.blog-card {
-  background: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-}
+  <!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div class="container">
 
-/* Thumbnail blog */
-.blog-thumb {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  position: relative;
-}
-.blog-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-.blog-card:hover .blog-thumb img {
-  transform: scale(1.08);
-}
+      <a class="navbar-brand" href="<?= base_url() ?>">
+        <img src="<?= base_url('clyde/assets/images/logo_syaxyz_black.jpg') ?>" 
+             alt="Syaxyz Logo" 
+             style="height:70px; object-fit:contain;">
+      </a>
 
-/* Konten blog */
-.blog-content {
-  padding: 20px;
-}
-.blog-date {
-  font-size: 13px;
-  color: #f97316;
-  font-weight: 500;
-}
-.blog-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #111827;
-  margin: 8px 0;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.blog-title:hover {
-  color: #2563eb;
-}
-.blog-excerpt {
-  color: #6b7280;
-  font-size: 14px;
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
+      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+        data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
 
-/* Read more icon */
-.blog-read {
-  color: #2563eb;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-.blog-read i {
-  margin-left: 5px;
-}
-.blog-read:hover {
-  transform: translateX(4px);
-}
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav nav ml-auto">
+          <li class="nav-item"><a href="<?= base_url() ?>#home-section" class="nav-link"><span>Home</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#about-section" class="nav-link"><span>About</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#skills-section" class="nav-link"><span>Skills</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#services-section" class="nav-link"><span>Services</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#projects-section" class="nav-link"><span>Projects</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#testimonial-section" class="nav-link"><span>Testimonial</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#blog-section" class="nav-link"><span>Blog</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#contact-section" class="nav-link"><span>Contact</span></a></li>
+        </ul>
+      </div>
 
-/* Pagination */
-.pagination {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  list-style: none;
-}
-.pagination li a, .pagination li span {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #e5e7eb;
-  font-size: 14px;
-  color: #2563eb;
-  text-decoration: none;
-}
-.pagination li.active span,
-.pagination li a:hover {
-  background: #2563eb;
-  color: #fff;
-}
-</style>
+    </div>
+  </nav>
+  
+  <!-- ================= BLOG SECTION ================= -->
+  <section id="blog-section" class="position-relative">
 
-<section id="blog-section" class="position-relative">
-  <!-- Tombol kembali di kiri atas -->
-  <a href="<?= base_url('landing') ?>" class="btn-back" data-aos="fade-right" title="Kembali">
-    <i class="bi bi-arrow-left"></i>
-  </a>
+    <!-- Tombol kembali -->
+    <a href="<?= base_url('landing') ?>" class="btn-back" data-aos="fade-right" title="Kembali">
+      <i class="bi bi-arrow-left"></i>
+    </a>
 
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-down">My Blog Posts</h2>
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down">My Blog Posts</h2>
 
-    <?php if(isset($posts) && count($posts) > 0): ?>
-    <div class="row g-4">
-      <?php foreach($posts as $post): 
-        $img = $post['image'] 
-    ? base_url('uploads/blog/'.$post['image']) 
-    : base_url('clyde/assets/images/default.jpg');
-        $raw = strip_tags($post['description'] ?? '');
-        $excerpt = (mb_strlen($raw) > 120) ? mb_substr($raw, 0, 120).'...' : $raw;
-      ?>
-      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="<?= rand(100,400) ?>">
-        <div class="blog-card">
-          <div class="blog-thumb">
-            <a href="<?= base_url('blog/'.$post['slug']) ?>">
-              <img src="<?= esc($img) ?>" alt="<?= esc($post['title']) ?>">
-            </a>
-          </div>
-          <div class="blog-content">
-            <span class="blog-date"><?= date('d F Y', strtotime($post['created_at'])) ?></span>
-            <a href="<?= base_url('blog/'.$post['slug']) ?>" class="blog-title">
-              <?= esc($post['title']) ?>
-            </a>
-            <p class="blog-excerpt"><?= esc($excerpt) ?></p>
-            <a href="<?= base_url('blog/'.$post['slug']) ?>" class="blog-read">
-              Read More <i class="bi bi-arrow-right"></i>
-            </a>
+      <?php if(isset($posts) && count($posts) > 0): ?>
+      <div class="row g-4">
+
+        <?php foreach($posts as $post): 
+          $img = $post['image'] 
+            ? base_url('uploads/blog/'.$post['image']) 
+            : base_url('clyde/assets/images/default.jpg');
+
+          $raw = strip_tags($post['description'] ?? '');
+          $excerpt = mb_strlen($raw) > 120 ? mb_substr($raw, 0, 120).'...' : $raw;
+        ?>
+
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="<?= rand(100,400) ?>">
+          <div class="blog-card">
+            <div class="blog-thumb">
+              <a href="<?= base_url('blog/'.$post['slug']) ?>">
+                <img src="<?= esc($img) ?>" alt="<?= esc($post['title']) ?>">
+              </a>
+            </div>
+
+            <div class="blog-content">
+              <span class="blog-date"><?= date('d F Y', strtotime($post['created_at'])) ?></span>
+
+              <a href="<?= base_url('blog/'.$post['slug']) ?>" class="blog-title">
+                <?= esc($post['title']) ?>
+              </a>
+
+              <p class="blog-excerpt"><?= esc($excerpt) ?></p>
+
+              <a href="<?= base_url('blog/'.$post['slug']) ?>" class="blog-read">
+                Read More <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
           </div>
         </div>
+
+        <?php endforeach; ?>
+
       </div>
-      <?php endforeach; ?>
-    </div>
-    <?php else: ?>
-      <p class="text-center text-muted" data-aos="fade-up">Belum ada blog yang ditambahkan.</p>
-    <?php endif; ?>
 
-    <?php if(isset($pager)): ?>
-    <div class="mt-5 text-center" data-aos="fade-up">
-      <?= $pager->links('posts', 'default_full') ?>
-    </div>
-    <?php endif; ?>
-  </div>
-</section>
+      <?php else: ?>
+        <p class="text-center text-muted" data-aos="fade-up">Belum ada blog yang ditambahkan.</p>
+      <?php endif; ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({
-  duration: 800,
-  once: true,
-  offset: 80,
-});
-</script>
+      <?php if(isset($pager)): ?>
+      <div class="mt-5 text-center" data-aos="fade-up">
+        <?= $pager->links('posts', 'default_full') ?>
+      </div>
+      <?php endif; ?>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="ftco-footer ftco-section" style="background:#151b29ff;color:#fff;padding:60px 0;">
+    <div class="container">
+
+      <div class="row justify-content-between align-items-start mb-5">
+
+        <!-- About -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="ftco-heading-2 mb-3" style="font-weight:600;color:#cbd5e1;">Ayo Bahas Proyek Anda</h2>
+          <p style="color:#cbd5e1;line-height:1.8;">
+          Saya seorang UI/UX Designer yang berfokus pada pembuatan antarmuka yang menarik, responsif, dan mudah digunakan. Saya senang memadukan kreativitas dan logika untuk menghasilkan karya digital yang estetis dan bermanfaat.
+          </p>
+          <a href="https://wa.me/6285922426982"class="btn btn-primary mt-2" style="border-radius:30px;padding:8px 20px;">Hubungi Saya</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-5">
+          <h2 class="ftco-heading-2 mb-3" style="font-weight:600;color:#cbd5e1;">Punya Pertanyaan?</h2>
+          <ul class="list-unstyled" style="color:#cbd5e1;line-height:2;">
+          <ul class="list-unstyled" style="color:#cbd5e1;line-height:2;">
+            <li><i class="fa fa-phone me-2"></i> +62 859 2242 6982</li>
+            <li><i class="fa fa-envelope me-2"></i> marsyaamira562@gmail.com</li>
+            <li><i class="fa fa-map-marker me-2"></i>  Lembah Permai Hanjuang Grande No.2 Blok H, Cibabat, Kec. Cimahi Utara, Kota Cimahi, Jawa Barat 40513</li>
+          </ul>
+
+          <ul class="ftco-footer-social list-unstyled d-flex gap-3 mt-3">
+            <li><a href="https://instagram.com/syaa148_" target="_blank" style="font-size:1.3rem;color:#fff;"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.tiktok.com/@ssym48" target="_blank" style="font-size:1.3rem;color:#fff;"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a href="https://wa.me/6281337585501" target="_blank" style="font-size:1.3rem;color:#fff;"><i class="fa-brands fa-whatsapp"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p style="color:#94a3b8;margin:0;">©2025 Marsya Amira Official Website, All Rights Reserved</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+    <!-- WhatsApp Bubble -->
+  <a href="https://wa.me/6285922426982" target="_blank" class="wa-bubble">
+    <i class="fab fa-whatsapp"></i>
+    <span>Kontak Kami</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="<?= base_url('clyde/assets/js/jquery.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/jquery-migrate-3.0.1.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/popper.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/bootstrap.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/jquery.easing.1.3.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/jquery.waypoints.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/jquery.stellar.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/owl.carousel.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/jquery.magnific-popup.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/jquery.animateNumber.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/scrollax.min.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/google-map.js') ?>"></script>
+  <script src="<?= base_url('clyde/assets/js/main.js') ?>"></script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  </script>
+
+</body>
+</html>

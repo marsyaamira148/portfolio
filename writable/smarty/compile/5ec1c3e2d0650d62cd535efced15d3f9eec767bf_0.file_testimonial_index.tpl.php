@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-11-22 12:53:51
+/* Smarty version 5.5.1, created on 2025-11-24 07:44:09
   from 'file:C:\laragon\www\web-portfolio\app\Views/admin\testimonial_index.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_6921b25f545f67_21464074',
+  'unifunc' => 'content_69240cc928dd53_81517464',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5ec1c3e2d0650d62cd535efced15d3f9eec767bf' => 
     array (
       0 => 'C:\\laragon\\www\\web-portfolio\\app\\Views/admin\\testimonial_index.tpl',
-      1 => 1763629811,
+      1 => 1763970246,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,20 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6921b25f545f67_21464074 (\Smarty\Template $_smarty_tpl) {
+function content_69240cc928dd53_81517464 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\laragon\\www\\web-portfolio\\app\\Views\\admin';
 $_smarty_tpl->getInheritance()->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->getInheritance()->instanceBlock($_smarty_tpl, 'Block_14402736446921b25edaa2a0_71573858', 'content');
+$_smarty_tpl->getInheritance()->instanceBlock($_smarty_tpl, 'Block_188214271469240cc9207b53_52469649', 'content');
 ?>
 
 <?php $_smarty_tpl->getInheritance()->endChild($_smarty_tpl, 'layout.tpl', $_smarty_current_dir);
 }
 /* {block 'content'} */
-class Block_14402736446921b25edaa2a0_71573858 extends \Smarty\Runtime\Block
+class Block_188214271469240cc9207b53_52469649 extends \Smarty\Runtime\Block
 {
 public function callBlock(\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\laragon\\www\\web-portfolio\\app\\Views\\admin';
@@ -200,16 +200,14 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 </tbody>
             </table>
 
-            <?php if ($_smarty_tpl->getValue('pager')) {?>
-<div class="pagination-wrapper mt-3">
-    <?php echo $_smarty_tpl->getValue('pager')->links();?>
+           <?php if ($_smarty_tpl->getValue('pager')) {?>
+            <div class="pagination-wrapper mt-3">
+                <?php echo $_smarty_tpl->getValue('pager')->links();?>
 
-</div>
-<?php }?>
-
+            </div>
+            <?php }?>
         </div>
     </div>
-
 </div>
 
 

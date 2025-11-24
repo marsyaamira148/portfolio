@@ -51,7 +51,7 @@
           <li class="nav-item"><a href="<?= base_url() ?>#skills-section" class="nav-link"><span>Skills</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#services-section" class="nav-link"><span>Services</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#projects-section" class="nav-link"><span>Projects</span></a></li>
-          <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Testimonial</span></a></li>
+          <li class="nav-item"><a href="<?= base_url() ?>#testimonial-section" class="nav-link"><span>Testimonial</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#blog-section" class="nav-link"><span>Blog</span></a></li>
           <li class="nav-item"><a href="<?= base_url() ?>#contact-section" class="nav-link"><span>Contact</span></a></li>
         </ul>
@@ -60,15 +60,29 @@
     </div>
   </nav>
 
+  <?php
+$ref = $_SERVER['HTTP_REFERER'] ?? '';
+$backUrl = base_url('#blog-section'); // default
+
+if (strpos($ref, 'blog') !== false) {
+    $backUrl = base_url('blog');
+}
+?>
+
   <!-- ================= BLOG DETAIL ================= -->
   <section class="blog-detail-section">
-    
+
+  <!-- Tombol kembali -->
+<a href="<?= $backUrl ?>" class="btn-back" data-aos="fade-right" title="Kembali">
+    <i class="bi bi-arrow-left">←</i>
+</a>
+
 
     <div class="container">
 
       <!-- Header -->
       <div class="blog-header" data-aos="fade-down">
-        <h2 class="blog-title"><?= esc($post['title'] ?? '(Tanpa Judul)') ?></h2>
+        <h1 class="blog-title"><?= esc($post['title'] ?? '(Tanpa Judul)') ?></h1>
       </div>
 
       <!-- Thumbnail -->
@@ -157,9 +171,7 @@
             Saya seorang UI/UX Designer yang berfokus pada pembuatan antarmuka yang menarik, responsif, dan mudah digunakan. Saya senang memadukan kreativitas dan logika untuk menghasilkan karya digital yang estetis dan bermanfaat.
           </p>
           </p>
-          <a href="<?= base_url() ?>#contact-section" class="btn btn-primary mt-2" style="border-radius:30px;padding:8px 20px;">
-            Hubungi Saya
-        </a>
+          <a href="https://wa.me/6285922426982"class="btn btn-primary mt-2" style="border-radius:30px;padding:8px 20px;">Hubungi Saya</a>
         </div>
 
         <!-- Contact -->

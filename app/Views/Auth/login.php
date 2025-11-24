@@ -86,13 +86,6 @@
     </div>
 </div>
 
-<footer>
-    <p>
-        Created with <i class="fa fa-heart"></i> by
-        <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-    </p>
-</footer>
-
 <script src="<?= base_url('assets/auth/script.js') ?>"></script>
 </body>
 </html>
