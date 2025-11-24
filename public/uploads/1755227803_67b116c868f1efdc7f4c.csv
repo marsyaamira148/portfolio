@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1deb1+deb12u1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Waktu pembuatan: 15 Agu 2025 pada 02.59
+-- Versi server: 10.11.11-MariaDB-0+deb12u1
+-- Versi PHP: 8.2.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_marsya`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `portfolios`
+--
+
+CREATE TABLE `portfolios` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `date` date NOT NULL,
+  `thumbnail` varchar(255) NOT NULL,
+  `project_file` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `portfolios`
+--
+
+INSERT INTO `portfolios` (`id`, `title`, `description`, `date`, `thumbnail`, `project_file`, `created_at`, `updated_at`) VALUES
+(1, 'contoh', 'assasasasas', '2025-08-08', '1754622282_962254803ebdeeac56e0.jpg', '1754622282_317915acf66c3a2eba09.html', '2025-08-08 03:04:42', NULL),
+(2, 'ghghgb', 'fgfgffgfgfgfgfgfg', '2025-08-08', '1754622459_56b442439a079ef3ee6c.jpg', '1754622459_292d504aa8c7768e56bb.csv', '2025-08-08 03:07:39', NULL),
+(3, 'FDFDFDFDF', 'BVBVBVB', '2025-08-12', '', '1754625949_c2834d549be2d2d113db.html', '2025-08-08 04:05:49', NULL),
+(4, 'CODEIGNITER', 'ini adalh hhffgfg', '2025-08-13', '1755054729_facebb1e159a08f926ff.jpg', '1755054729_9ce1d09f7d1099fe2f42.csv', '2025-08-13 03:12:09', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `portfolios`
+--
+ALTER TABLE `portfolios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `portfolios`
+--
+ALTER TABLE `portfolios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

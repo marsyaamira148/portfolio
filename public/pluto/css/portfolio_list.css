@@ -1,0 +1,53 @@
+.portfolio-grid {
+    margin-top: 20px;
+}
+
+.portfolio-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-body {
+    padding: 15px;
+    flex: 1;
+}
+
+.portfolio-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.portfolio-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.portfolio-actions {
+    padding: 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
+}

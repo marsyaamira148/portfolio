@@ -1,0 +1,67 @@
+.upload-container {
+    min-height: calc(100vh - 100px); /* tinggi layar dikurangi tinggi topbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px; /* jarak aman dari topbar */
+    padding-bottom: 40px;
+}
+
+.upload-card {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.upload-card h3 {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upload-card label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.upload-card .form-control {
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload-card .form-control:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.upload-card button.btn-primary {
+    border-radius: 10px;
+    background-color: #4a90e2;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.upload-card button.btn-primary:hover {
+    background-color: #357ab7;
+}
+
+.upload-card a.btn-secondary {
+    border-radius: 10px;
+}
+
+.upload-card .form-group {
+    margin-bottom: 15px;
+}
+
+.upload-card .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
